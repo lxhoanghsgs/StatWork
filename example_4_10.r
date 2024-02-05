@@ -18,6 +18,6 @@ cols <- c(1:31, 33)
 cov_matrix <- outer(rows, cols, FUN = cov_entries)
 # plot(temp_in_march$Day, temp_in_march$Temperature, type = "b")
 # Use conditional distribution.
-prediction_april_2 <- mu[32] + cov_matrix[32, 1:31] %*% solve(cov_matrix[1:31, 1:31]) %*% (temp_in_march$Temperature - mu[1:31])
+prediction_april_2 <- mu[32] + cov_matrix[32, 1:31] %*% solve(cov_matrix[1:31, 1:31], (temp_in_march$Temperature - mu[1:31]))
 prediction_april_2
 # prediction_april_2 = 31.72. Done!
